@@ -1,41 +1,18 @@
 import React from 'react';
+import './App.css';
+import {HashRouter, Route} from 'react-router-dom';
+import Home from './routes/Home';
+import About from './routes/About';
+import Navigation from './components/Navigation';
 
-class App extends React.Component{
-	constructor(props){
-		super(props);
-		console.log('from constructor');
-	}
-	state={
-		count: 0,
-	};
-	add =()=>{
-		//console.log('add');
-		this.setState(current => ({count: current.count + 1}));
-	}
-	minus =()=>{
-		this.setState(current => ({count: current.count -1}));
-	}
-	componentDidMount(){
-		console.log('from componentDidMount');
-	}
-	componentDidUpdate(){
-		console.log('from componentDidUpdate');
-	}
-	componentWillUnmount(){
-		console.log('from componentWillUnmount');
-	}
-
-	render(){
-		console.log('from render');
-		return (
-			<div>
-				<h1>It's class based.</h1>
-				<h3>number is: {this.state.count}</h3>
-				<button onClick={this.add}>Add</button>
-				<button onClick={this.minus}>Minus</button>
-			</div>
-		);
-	}
+function App(){
+	return (
+		<HashRouter>
+			<Navigation />
+			<Route path="/" exact={true} component={Home} />
+			<Route path="/about" component={About} />
+		</HashRouter>
+	);
 }
 
 export default App;
