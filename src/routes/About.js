@@ -1,11 +1,12 @@
 import React from 'react';
 import './About.css';
 
-function About(){
+function About(props){
+    console.log(props);
     return (
         <div className="about__container">
             <span>
-                "I built it cause just fun."
+                "built it for just fun."
             </span>
             <span>-noman-</span>
         </div>
