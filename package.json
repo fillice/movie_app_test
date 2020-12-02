@@ -37,8 +37,3 @@
 		]
 	}
 }
-//,
-// "predeploy": "npm run build",
-// "deploy": "gh-pages -d build"
-// ,
-// 	"homepage": "https://github.com/fillice/movie_app_test"
